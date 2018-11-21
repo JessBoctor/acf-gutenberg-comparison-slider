@@ -1,0 +1,131 @@
+[
+    {
+        "key": "group_5be6331da87a4",
+        "title": "Comparison Images",
+        "fields": [
+            {
+                "key": "field_5be6335a9ed94",
+                "label": "Left Image",
+                "name": "comp_left_image",
+                "type": "image_crop",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "crop_type": "hard",
+                "target_size": "custom",
+                "width": 960,
+                "height": 540,
+                "preview_size": "medium",
+                "force_crop": "yes",
+                "save_in_media_library": "yes",
+                "retina_mode": "no",
+                "save_format": "id",
+                "library": "all"
+            },
+            {
+                "key": "field_5bf24b9896b5b",
+                "label": "Left Image Label",
+                "name": "comp_left_image_label",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5be633929ed95",
+                "label": "Right Image",
+                "name": "comp_right_image",
+                "type": "image_crop",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "crop_type": "hard",
+                "target_size": "custom",
+                "width": 960,
+                "height": 540,
+                "preview_size": "medium",
+                "force_crop": "yes",
+                "save_in_media_library": "yes",
+                "retina_mode": "no",
+                "save_format": "id",
+                "library": "all"
+            },
+            {
+                "key": "field_5bf24b8396b5a",
+                "label": "Right Image Label",
+                "name": "comp_right_image_label",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bf24bac96b5c",
+                "label": "Drag Icon Color",
+                "name": "comp_drag_icon_color",
+                "type": "color_picker",
+                "instructions": "Select the color for the drag icon.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "default_value": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/comparison-images"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
