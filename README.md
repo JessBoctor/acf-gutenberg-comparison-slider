@@ -1,2 +1,15 @@
-# acf-gutenberg-comparison-slider
+# ACF Gutenberg Comparison Slider
 An image comparison slider block based on ACF, ACF Image Crop, and Gutenberg
+
+This slider block is created using the ACF 5.8 Beta functionality described here:
+https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gutenberg/
+
+# Plugin Dependencies
+-Advanced Custom Field Prop version 5.8 Beta
+-Gutenberg
+-ACF Image Crop
+
+# How to Install
+1. Install and activate the plugins this plugin is dependent on
+2. Install and activate the ACF Gutenberg Comparison Slider plugin
+3. Import the comparison slider field group found at acf-gutenberg-comparison-slider/comparison-slider-field-group.json
