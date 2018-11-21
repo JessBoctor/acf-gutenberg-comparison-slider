@@ -39,12 +39,6 @@ function acf_comp_img_scripts(){
 		array('jquery')
 	);
 	
-	write_log( '/*-------------------------------------*/');
-	write_log( 'Page Relaod');
-	write_log( 'Css registration test: ' . $test_css );
-	write_log( ACF_COMP_IMG_PLUGIN_URL . 'assets/acf-comp-img-style.css');
-	write_log( 'js registration test: ' . $test_js  );
-	
 	//>>Localize the JS Script
 	wp_localize_script( 
 		'comp_img_scripts',
@@ -56,24 +50,16 @@ function acf_comp_img_scripts(){
 	$blocks = gutenberg_parse_blocks( $post->post_content );
 	
 	$block_names = wp_list_pluck( $blocks, 'blockName' );
-	write_log( 'block names:');
-	write_log( $block_names );
 	
-	
-
 	//>>If the block is present, enqueue the scripts
     if ( in_array( 'acf/comparison-images', $block_names ) ) {
 	    
-	    write_log( 'passed block test' );
 	    wp_enqueue_style( 'comp_img_style' );
 		$test_css_enqueue = wp_style_is( 'comp_img_style' );
-		
+
 		wp_enqueue_script( 'comp_img_scripts' );
 		$test_js_enqueue = wp_script_is( 'comp_img_scripts' );
 		
-		write_log($test_css_enqueue );
-		write_log($test_js_enqueue  );
-	    
     }
     
 }
@@ -103,7 +89,6 @@ function acf_comp_img_block_render_callback( $block ) {
 	
 	// include a template part from within the "template-parts/block" folder
 	if( file_exists( ACF_COMP_IMG_PLUGIN_DIR . "acf-comparison-slider-block.php") ) {
-		write_log( 'Passed file exists test' );
 		include( ACF_COMP_IMG_PLUGIN_DIR . "acf-comparison-slider-block.php" );
 	}
 
