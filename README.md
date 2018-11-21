@@ -17,5 +17,5 @@ https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gut
 3. Import the comparison slider field group found at acf-gutenberg-comparison-slider/comparison-slider-field-group.json
 
 # Example
-![Example Slider](acf-gutenberg-comparison-slider/assets/img/acf-gutenberg-comparison-slider-example.gif)
+![Example Slider](/assets/img/acf-gutenberg-comparison-slider-example.gif)
       
