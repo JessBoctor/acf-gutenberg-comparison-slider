@@ -15,3 +15,7 @@ https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gut
 1. Install and activate the plugins this plugin is dependent on
 2. Install and activate the ACF Gutenberg Comparison Slider plugin
 3. Import the comparison slider field group found at acf-gutenberg-comparison-slider/comparison-slider-field-group.json
+
+# Example
+![Example Slider](acf-gutenberg-comparison-slider/assets/img/acf-gutenberg-comparison-slider-example.gif)
+      
