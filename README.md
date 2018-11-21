@@ -1,6 +1,8 @@
 # ACF Gutenberg Comparison Slider
 An image comparison slider block based on ACF, ACF Image Crop, and Gutenberg
 
+The slider code was taken from https://github.com/CodyHouse/image-comparison-slider
+
 This slider block is created using the ACF 5.8 Beta functionality described here:
 https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gutenberg/
 
