@@ -5,9 +5,9 @@ This slider block is created using the ACF 5.8 Beta functionality described here
 https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gutenberg/
 
 # Plugin Dependencies
--Advanced Custom Field Prop version 5.8 Beta
--Gutenberg
--ACF Image Crop
+- Advanced Custom Field Prop version 5.8 Beta: https://www.advancedcustomfields.com/pro/
+- Gutenberg: https://wordpress.org/plugins/gutenberg/
+- ACF Image Crop: https://github.com/andersthorborg/ACF-Image-Crop
 
 # How to Install
 1. Install and activate the plugins this plugin is dependent on
