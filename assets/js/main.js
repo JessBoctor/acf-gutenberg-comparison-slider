@@ -55,7 +55,7 @@ jQuery(document).ready(function($){
 
     //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
     function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
-        dragElement.on("mousedown vmousedown", function(e) {
+        dragElement.on("mousedown vmousedown touchmove", function(e) {
             dragElement.addClass('draggable');
             resizeElement.addClass('resizable');
 
@@ -66,7 +66,7 @@ jQuery(document).ready(function($){
                 minLeft = containerOffset + 10,
                 maxLeft = containerOffset + containerWidth - dragWidth - 10;
             
-            dragElement.parents().on("mousemove vmousemove", function(e) {
+            dragElement.parents().on("mousemove vmousemove touchmove", function(e) {
                 if( !dragging) {
                     dragging =  true;
                     ( !window.requestAnimationFrame )
@@ -95,7 +95,7 @@ jQuery(document).ready(function($){
 
         var widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
         
-        $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
+        $('.draggable').css('left', widthValue).on("mouseup vmouseup touchmove", function() {
             $(this).removeClass('draggable');
             resizeElement.removeClass('resizable');
         });

@@ -32,34 +32,59 @@ function acf_comp_img_scripts(){
 		array()
 	);
 	
-	//>>Register the JS
+	//>>Register the Modernizer Script
+	$modernizr_js = wp_register_script( 
+		'comp_modernizr_scripts',
+		ACF_COMP_IMG_PLUGIN_URL . 'assets/js/modernizr.js',
+		array( 'jquery', 'jquery-touch-punch' )
+	);
+	
+	//>>Register the JS for the image scripts
 	$test_js = wp_register_script(
 		'comp_img_scripts',
 		ACF_COMP_IMG_PLUGIN_URL . 'assets/js/main.js',
-		array('jquery')
+		array( 'comp_modernizr_scripts' )
+	);
+	
+	$touch_js = wp_register_script( 
+		'comp_touch_scripts',
+		ACF_COMP_IMG_PLUGIN_URL . 'assets/js/jquery.mobile-1.4.5.min.js',
+		array('comp_img_scripts' )
 	);
 	
 	//>>Localize the JS Script
 	wp_localize_script( 
 		'comp_img_scripts',
 		'comp_img_data',
-		array()
+		array( 'comp_img_scripts' )
 	);
 	
 	//>>Check to see if our block is being used on the post
-	$blocks = gutenberg_parse_blocks( $post->post_content );
+	$blocks = parse_blocks( $post->post_content );
 	
 	$block_names = wp_list_pluck( $blocks, 'blockName' );
-	
+
 	//>>If the block is present, enqueue the scripts
     if ( in_array( 'acf/comparison-images', $block_names ) ) {
 	    
+	    write_log( 'passed block test' );
 	    wp_enqueue_style( 'comp_img_style' );
 		$test_css_enqueue = wp_style_is( 'comp_img_style' );
-
-		wp_enqueue_script( 'comp_img_scripts' );
-		$test_js_enqueue = wp_script_is( 'comp_img_scripts' );
 		
+		//replace the jquery
+	    wp_deregister_script('jquery');
+		wp_register_script('jquery', ACF_COMP_IMG_PLUGIN_URL . 'assets/js/jquery-2.1.1.js', false, '2.1.1');
+		wp_enqueue_script('jquery');
+		
+		//Enqueue the modernizer JS
+		wp_enqueue_script( 'comp_modernizr_scripts' );
+		
+		//Enqueue the image JS
+		wp_enqueue_script( 'comp_img_scripts' );
+		
+		//Enqueue the mobile scripts
+		wp_enqueue_script( 'comp_touch_scripts' );
+				
     }
     
 }
@@ -89,6 +114,7 @@ function acf_comp_img_block_render_callback( $block ) {
 	
 	// include a template part from within the "template-parts/block" folder
 	if( file_exists( ACF_COMP_IMG_PLUGIN_DIR . "acf-comparison-slider-block.php") ) {
+		write_log( 'Passed file exists test' );
 		include( ACF_COMP_IMG_PLUGIN_DIR . "acf-comparison-slider-block.php" );
 	}
 
